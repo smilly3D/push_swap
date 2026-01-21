@@ -1,0 +1,16 @@
+obj/
+push_swap
+
+
+*.o
+*.d
+
+out.txt
+err.txtobj/
+push_swap
+
+*.o
+*.d
+
+out.txt
+err.txt
