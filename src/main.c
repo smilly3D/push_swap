@@ -6,7 +6,7 @@
 /*   By: smilly <smilly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 14:08:57 by smilly            #+#    #+#             */
-/*   Updated: 2026/01/21 17:06:27 by smilly           ###   ########.fr       */
+/*   Updated: 2026/01/22 11:57:50 by smilly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,14 @@ int	main(int argc, char **argv)
 	stack_a = parse_args(argc, argv);
 	if (!stack_a)
 		return (1);
-
 	stack_b = NULL;
-
-
 	if (is_sorted(stack_a))
 	{
 		free_list(stack_a);
 		return (0);
 	}
-
 	sort_stack(&stack_a, &stack_b);
 	free_list(stack_a);
 	free_list(stack_b);
-
 	return (0);
 }

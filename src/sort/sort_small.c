@@ -6,7 +6,7 @@
 /*   By: smilly <smilly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 15:14:13 by smilly            #+#    #+#             */
-/*   Updated: 2026/01/21 15:31:49 by smilly           ###   ########.fr       */
+/*   Updated: 2026/01/22 12:22:13 by smilly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,11 @@ static void	aux_sort_five(t_stack **stack_a, t_stack **stack_b, int push_count)
 	int	min_idx;
 	int	i;
 
+	i = 0;
 	while (i < push_count)
 	{
-
 		size = list_size(*stack_a);
 		min_idx = find_min_index(*stack_a);
-
 		if (min_idx <= size / 2)
 		{
 			while (min_idx-- > 0)
@@ -74,19 +73,14 @@ void	sort_five(t_stack **stack_a, t_stack **stack_b)
 	int	push_count;
 
 	push_count = list_size(*stack_a) - 3;
-
 	if (push_count <= 0)
 		push_count = 0;
-
 	aux_sort_five(stack_a, stack_b, push_count);
-
 	sort_three(stack_a);
 	i = 0;
-
 	while (i < push_count)
 	{
 		pa(stack_a, stack_b);
 		i++;
 	}
-
 }

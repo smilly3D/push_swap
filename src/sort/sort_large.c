@@ -6,7 +6,7 @@
 /*   By: smilly <smilly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 16:15:45 by smilly            #+#    #+#             */
-/*   Updated: 2026/01/21 17:06:30 by smilly           ###   ########.fr       */
+/*   Updated: 2026/01/22 12:15:15 by smilly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,15 +99,11 @@ void	sort_chunks(t_stack **stack_a, t_stack **stack_b)
 {
 	int	size;
 
-
 	if (!stack_a || !*stack_a)
 		return ;
 	if (is_sorted(*stack_a))
 		return ;
-
 	size = list_size(*stack_a);
-
 	pre_order_stack_b(stack_a, stack_b, size);
-
 	order_stack_a(stack_a, stack_b);
 }

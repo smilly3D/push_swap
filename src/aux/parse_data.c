@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   valid_numbers.c                                    :+:      :+:    :+:   */
+/*   parse_data.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smilly <smilly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 14:11:41 by smilly            #+#    #+#             */
-/*   Updated: 2026/01/21 14:27:47 by smilly           ###   ########.fr       */
+/*   Updated: 2026/01/22 12:13:30 by smilly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,11 @@ int	is_number(char *str)
 
 	if (!str || str[0] == '\0')
 		return (0);
-
 	i = 0;
 	if (str[i] == '-' || str[i] == '+')
 		i++;
 	if (str[i] == '\0')
 		return (0);
-
 	while (str[i] != '\0')
 	{
 		if (str[i] < '0' || str[i] > '9')
@@ -60,7 +58,6 @@ int	ft_atoi_overlow(char *str)
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		result = result * 10 + (str[i] - '0');
-
 		if ((sign == 1 && result > 2147483647)
 			|| (sign == -1 && result > 2147483648))
 			error_exit();
@@ -101,12 +98,14 @@ t_stack	*parse_args(int argc, char **argv)
 	while (i < argc)
 	{
 		if (!is_number(argv[i]))
+		{
+			free(output);
 			error_exit();
+		}
 		push_back(&output, ft_atoi_overlow(argv[i]));
 		i++;
 	}
 	if (has_duplicates(output))
 		error_exit();
-
 	return (output);
 }

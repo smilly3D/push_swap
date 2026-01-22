@@ -6,7 +6,7 @@
 /*   By: smilly <smilly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 14:39:29 by smilly            #+#    #+#             */
-/*   Updated: 2026/01/21 14:42:03 by smilly           ###   ########.fr       */
+/*   Updated: 2026/01/22 11:59:03 by smilly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,11 @@ static void	rotate_stack(t_stack **stack)
 
 	if (!stack || !*stack || !(*stack)->next)
 		return ;
-
 	first = *stack;
 	new_head = first->next;
-
 	last = new_head;
 	while (last->next != NULL)
 		last = last->next;
-
 	*stack = new_head;
 	last->next = first;
 	first->next = NULL;

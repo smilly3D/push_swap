@@ -6,7 +6,7 @@
 /*   By: smilly <smilly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 12:35:56 by smilly            #+#    #+#             */
-/*   Updated: 2026/01/21 17:06:29 by smilly           ###   ########.fr       */
+/*   Updated: 2026/01/22 12:20:51 by smilly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,12 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-
 typedef struct s_stack
 {
 	int				value;
 	int				index;
 	struct s_stack	*next;
 }	t_stack;
-
 
 //parse_data
 int		is_number(char *str);
@@ -71,5 +69,4 @@ void	sort_chunks(t_stack **stack_a, t_stack **stack_b);
 
 //sort
 void	sort_stack(t_stack **stack_a, t_stack **stack_b);
-
 #endif

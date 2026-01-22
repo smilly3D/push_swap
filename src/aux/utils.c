@@ -6,7 +6,7 @@
 /*   By: smilly <smilly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 15:02:06 by smilly            #+#    #+#             */
-/*   Updated: 2026/01/21 17:06:29 by smilly           ###   ########.fr       */
+/*   Updated: 2026/01/22 12:02:43 by smilly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ t_stack	*create_node(int value)
 	new_node->value = value;
 	new_node->index = 0;
 	new_node->next = NULL;
-
 	return (new_node);
 }
 
@@ -38,7 +37,6 @@ int	list_size(t_stack *head)
 		current = current->next;
 		count++;
 	}
-
 	return (count);
 }
 
@@ -52,7 +50,6 @@ void	free_list(t_stack *head)
 		free(head);
 		head = next_point;
 	}
-
 }
 
 void	push_back(t_stack **head, int value)
@@ -61,21 +58,17 @@ void	push_back(t_stack **head, int value)
 	t_stack	*current;
 
 	current = *head;
-
 	new_node = create_node(value);
 	if (!new_node)
 		return ;
-
 	if (*head == NULL)
 	{
 		*head = new_node;
 		return ;
 	}
-
 	while (current->next != NULL)
 	{
 		current = current->next;
 	}
-
 	current->next = new_node;
 }

@@ -6,7 +6,7 @@
 /*   By: smilly <smilly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 14:35:49 by smilly            #+#    #+#             */
-/*   Updated: 2026/01/21 14:43:56 by smilly           ###   ########.fr       */
+/*   Updated: 2026/01/22 11:58:43 by smilly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,8 @@ static void	push_stack(t_stack **top_src, t_stack **top_dest)
 
 	if (!top_src || !*top_src || !top_dest)
 		return ;
-
 	node = *top_src;
 	next_top = node->next;
-
 	node->next = *top_dest;
 	*top_dest = node;
 	*top_src = next_top;
